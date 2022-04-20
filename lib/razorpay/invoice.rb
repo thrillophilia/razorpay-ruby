@@ -5,6 +5,10 @@ module Razorpay
   # Invoice API allows you to create and
   # manage invoices with Razorpay
   class Invoice < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('invoices', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def create(options)
       request.create options
     end

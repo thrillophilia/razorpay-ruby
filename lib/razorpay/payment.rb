@@ -7,6 +7,10 @@ module Razorpay
   # and is used to interact with Payments, the most
   # common type of transactions
   class Payment < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('payments', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def fetch(id)
       request.fetch id
     end

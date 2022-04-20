@@ -5,6 +5,10 @@ module Razorpay
   # Subscription API allows you to create and
   # manage subscriptions with Razorpay
   class Subscription < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('subscriptions', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def create(options)
       request.create options
     end

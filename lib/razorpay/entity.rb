@@ -7,9 +7,9 @@ module Razorpay
   class Entity
     attr_reader :attributes, :request
 
-    def initialize(auth_settings: {}, attributes: {})
+    def initialize(entity_name, auth_settings: {}, attributes: {})
       @attributes = attributes
-      @request = Razorpay::Request.new('orders', auth_settings)
+      @request = Razorpay::Request.new(entity_name, auth_settings)
     end
 
     # This method fakes attr_reader, but uses

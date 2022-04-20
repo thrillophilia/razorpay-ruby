@@ -5,6 +5,10 @@ module Razorpay
   # Addon API allows you to fetch and delete
   # subscription-addons with Razorpay
   class Addon < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('addons', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def fetch(id)
       request.fetch id
     end

@@ -5,6 +5,10 @@ module Razorpay
   # Order API allows you to associate
   # Payments with an order entity
   class Order < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('orders', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def create(options)
       request.create options
     end

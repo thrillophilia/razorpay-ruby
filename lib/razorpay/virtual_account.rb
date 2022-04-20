@@ -5,6 +5,10 @@ module Razorpay
   # Virtual Account API allows you to create and
   # manage virtual accounts with Razorpay
   class VirtualAccount < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('virtual_accounts', auth_settings: auth_settings, attributes: attributes)
+    end
+
     def create(options)
       request.create options
     end

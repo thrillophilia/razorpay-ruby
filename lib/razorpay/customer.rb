@@ -4,6 +4,9 @@ require 'razorpay/entity'
 module Razorpay
   # Customer API allows you to create and fetch customers on Razorpay
   class Customer < Entity
+    def initialize(auth_settings: {}, attributes: {})
+      super('customers', auth_settings: auth_settings, attributes: attributes)
+    end
     def create(options)
       request.create options
     end
