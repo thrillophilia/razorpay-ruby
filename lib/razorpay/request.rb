@@ -93,7 +93,7 @@ module Razorpay
         # Use Entity class if we don't find any
         klass = Razorpay::Entity
       end
-      klass.new(attributes: response)
+      klass.new(attributes: response, auth_settings: @options[:basic_auth])
     end
 
     def raise_error(error, status)
